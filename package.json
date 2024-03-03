@@ -1,6 +1,6 @@
 {
   "name": "@cal-heatmap/legend-lite",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.3",
   "description": "Legend lite plugin for cal-heatmap",
   "type": "module",
   "repository": {
