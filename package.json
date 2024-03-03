@@ -1,6 +1,6 @@
 {
   "name": "@cal-heatmap/legend-lite",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "description": "Legend lite plugin for cal-heatmap",
   "type": "module",
   "repository": {
@@ -31,7 +31,7 @@
     "./package.json": "./package.json"
   },
   "peerDependencies": {
-    "cal-heatmap": "4.3.0-beta.3"
+    "cal-heatmap": "^4.3.0-beta.4"
   },
   "dependencies": {
     "core-js": "^3.36.0",
