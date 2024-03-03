@@ -31,7 +31,7 @@
     "./package.json": "./package.json"
   },
   "peerDependencies": {
-    "cal-heatmap": "4.3.0-beta.1"
+    "cal-heatmap": "4.3.0-beta.3"
   },
   "dependencies": {
     "core-js": "^3.36.0",

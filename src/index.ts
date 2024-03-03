@@ -31,7 +31,7 @@ const defaultOptions: LegendLiteOptions = {
 export default class LegendLite implements ILegendLite {
   static readonly VERSION = VERSION;
 
-  calendar: CalHeatmap;
+  calendar!: CalHeatmap;
 
   root: any;
 
@@ -41,19 +41,26 @@ export default class LegendLite implements ILegendLite {
 
   #calendarOptions: any;
 
-  constructor(calendar: CalHeatmap) {
-    this.calendar = calendar;
+  constructor() {
     this.root = null;
     this.shown = false;
     this.options = defaultOptions;
-    this.#calendarOptions = this.calendar.options.options;
   }
 
-  setup(pluginOptions?: Partial<LegendLiteOptions>): void {
+  setup(
+    calendar: CalHeatmap,
+    pluginOptions?: Partial<LegendLiteOptions>,
+  ): void {
+    this.calendar = calendar;
+    this.#calendarOptions = this.calendar.options.options;
     this.options = { ...this.options, ...pluginOptions };
   }
 
   paint(): Promise<unknown> {
+    if (!this.calendar) {
+      throw new Error('Calendar is not initialized');
+    }
+
     const { enabled, itemSelector } = this.options;
 
     if (!enabled || (itemSelector && select(itemSelector).empty())) {
